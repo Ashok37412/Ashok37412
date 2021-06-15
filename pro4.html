@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <style>
+        h1{
+             color:blue;
+             font-size:25px;
+             font-family:Verdana, Geneva, Tahoma, sans-serif;
+         }
+        #a21{
+             list-style-image:url("ak21.jpg");
+          }
+          #a22{
+             list-style-image:url("ak22.jpg");
+          }
+          #a23{
+             list-style-image:url("ak23.jpg");
+          }
+          #a24{
+             list-style-image:url("ak24.jpg");
+          }
+          
+          div{
+     
+            width:800px;
+           height:500px;
+           background-color:rgb(248, 172, 255);
+        } 
+
+        body{
+            background-color: violet;
+        }
+
+    </style>
+</head>
+<body>
+    <center>
+        <h1>WEL-COME to NEXT page 3</h1>
+        <table> 
+        <tr>
+        <td><li id="a21"><a href="pro1.html" target="_blank" style="font-size:40px;">Home   </a></li></td>
+        <td><li  id="a22"><a href="pro2.html" target="_blank" style="font-size:40px;">Details  </a></li></td>
+        <td><li  id="a23"><a href="pro3.html" target="_blank" style="font-size:40px;">contact  </a></li></td>
+        <td><li  id="a24"><a href="pro4.html" target="_blank" style="font-size:40px;">About   </a></li></td>
+       </tr>
+       </table>
+    </center><br><br><br>
+    <center>
+    <h3 style="font-size:50px">Ask Y?our Doubts</h3>
+    <div id="a"> </div>
+    <p> </p>
+    <h1>Type Text</h1><br>
+    <textarea id="input" rows="10" cols="115"></textarea><br><br>
+    <button type="button" onclick="create()" style="background-color:yellow;"> submit</button>
+    <button type="button" id="akk" style="background-color:red;">End</button>
+
+    </center>
+   
+
+
+    <script>
+        function create(){
+           value=document.getElementById("input").value;
+           element=document.createElement("p");
+           text=document.createTextNode(value);
+           element.appendChild(text);
+           a=document.getElementById("a")
+           a.appendChild(element);
+     
+        }
+
+       $(document).ready(function(){
+             $("#akk").click(function(){
+                  alert("ThankYou visit again!");
+           });
+       });
+
+     </script>
+</body>
+</html>

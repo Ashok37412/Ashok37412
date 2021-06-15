@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <style>
+        h1{
+            color:darkmagenta;
+        }
+    
+         #a21{
+             list-style-image:url("ak21.jpg");
+          }
+          #a22{
+             list-style-image:url("ak22.jpg");
+          }
+          #a23{
+             list-style-image:url("ak23.jpg");
+          }
+          #a24{
+             list-style-image:url("ak24.jpg");
+          }
+          ul{
+              left:40px;
+          }
+          body{
+              background-color: rgb(194, 212, 209);
+          }
+
+          .Name-color{
+                background-color:rgb(35, 11, 170);
+                color:wheat;
+          }
+    
+
+      .Email-color{
+              background-color:rgb(35, 11, 170);
+              color:wheat;
+         }
+
+     .weak{
+         background-color:rgb(35, 11, 170);
+           color:red;
+  
+    }
+
+   .medium{
+        background-color:rgb(35, 11, 170);
+        color:rgb(255, 0, 255);
+    }
+
+   .strong{
+       background-color:rgb(35, 11, 170);
+       color:hsl(115, 100%, 40%);
+    }
+    #ff{
+        background-color: rgb(60, 172, 187);
+        height:300px;
+        width:700px;
+    }
+    .red-color{
+  color:red;
+  }
+  .blue-color{
+  color:blue;
+}
+</style>
+</head>
+<body>
+ <center>
+        <h1>WEL-COME to NEXT page 1</h1>
+        <table> 
+        <tr>
+        <td><li id="a21"><a href="pro1.html" target="_blank" style="font-size:40px;">Home   </a></li></td>
+        <td><li  id="a22"><a href="pro2.html" target="_blank" style="font-size:40px;">Details  </a></li></td>
+        <td><li  id="a23"><a href="pro3.html" target="_blank" style="font-size:40px;">contact  </a></li></td>
+        <td><li  id="a24"><a href="pro4.html" target="_blank" style="font-size:40px;">About   </a></li></td>
+       </tr>
+       </table>
+</center><br><br><br><br><br>
+<a id="go"> </a> <br><br><br>
+<h1 style="font-size:30px;color:red;text-align:center;">Personal Information</h1>
+<center>
+
+<table id="mytable">
+    <tr>
+    <td>Name <mark>(Name with Initial Ex: Ashok.M )</mark></td>
+    <td><input oninput="Name()" onmouseout="mouseout1()" id="a1" > <span id="span1"> </span> </td>
+    </tr>
+    
+    <tr>
+    <td>Email <mark>(Must in @ Ex:ashok@gmail.com)</mark></td>
+    <td><input oninput="Email()" onmouseout="mouseout2()" id="a2"> <span id="span2"> </span> </td>
+    </tr>
+    
+    <tr>
+    <td>Password <mark>(Must in alphabets small,caps,num,spc chars)</mark></td>
+    <td><input oninput="password()" onmouseout="mouseout3()" id="a3"> <span id="span3"> </span> </td>
+    </tr>  
+
+    <tr>
+        <td>Gender</td>
+        <td>
+            Male<input type="radio" name="gender">
+            Female<input type="radio" name="gender">
+            Other<input type="radio" name="gender">      
+        </td>
+    </tr>
+
+    <tr>
+        <td>Comments</td>
+        <td><textarea rows="10" cols="70"> </textarea></td>
+    </tr>
+  
+    <tr>
+        <td>Resume</td>
+        <td><input type="file" id="file" onChange="validate(this.value)"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><p id="error">...................</p></td>
+    </tr>
+    
+   
+</table><br><br><br>
+    <button id="upload" onclick="check_form()" style="background-color:rgb(255, 0, 149);">UPLOAD</button>
+    <button id="submit" style="background-color:rgb(255, 0, 149);">SUBMIT</button>
+    <button id="data" style="background-color:rgb(255, 0, 149);">DATA</button>
+    <p id="ans"></p>
+    <h3>IMPORTANT DATA</h3>
+    <div id="ff">
+       <br><br><br>
+       <p id="a"></p>
+       <p id="b"></p>
+       <p id="c"></p>
+    </div>
+</center><br><br>
+<center><a href="#go" style="font-size:50px">Go to top</a></center>
+
+
+<script>
+
+    var x=document.getElementsByTagName("input");
+    function check_form()
+    {
+      Name=/^[A-Za-z]+\.+[A-Za-z]+$/;
+      if(x[0].value=="")
+      {
+         alert("please enter Name");
+         return false;
+      }
+      if(!Name.test(x[0].value))
+      {
+        alert("please enter valid Name");
+        return false;
+      }
+      
+      Email=/^([A-Za-z0-9])+\@+([A-Za-z])+\.+([A-Za-z])+$/;
+      if(x[1].value=="")
+      {
+         alert("please enter email");
+         return false;
+      }
+      if(!Email.test(x[1].value))
+      {
+        alert("please enter valid email");
+        return false;
+      }
+    
+      pass=/^((?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*]).{6,})+$/;
+      
+      if(x[2].value=="")
+      {
+         alert("please enter password");
+         return false;
+      }
+      if(!pass.test(x[2].value))
+      {
+        alert("please enter valid password");
+        return false;
+      }
+    
+      }
+    
+    function Name()
+    {
+     document.getElementById("span1").className="Name-color";
+     document.getElementById("span1").innerHTML="Your typing name input";
+    }
+    
+    
+    function Email()
+    {
+    document.getElementById("span2").className="Email-color";
+     document.getElementById("span2").innerHTML="Your typing email input";
+    }
+    
+    function password()
+    {
+      len=x[2].value.length;
+      if(len<=3)
+       {
+         document.getElementById("span3").className="weak";
+         document.getElementById("span3").innerHTML="Your password is weak";
+       }
+      if(len>=4 && len>=6)
+       {
+         document.getElementById("span3").className="medium";
+         document.getElementById("span3").innerHTML="Your password is medium";
+       }
+      if(len>=7)
+       {
+         document.getElementById("span3").className="strong";
+         document.getElementById("span3").innerHTML="Your password is strong";
+       }
+    }
+    
+    function mouseout1()
+    {
+      document.getElementById("span1").className="Name-color";
+      document.getElementById("span1").innerHTML="";
+    }
+    
+    
+    function mouseout2()
+    {
+      document.getElementById("span2").className="Email-color";
+      document.getElementById("span2").innerHTML="";
+    }
+    
+    function mouseout3()
+    {
+      document.getElementById("span3").classList.remove("weak","medium","strong");
+      document.getElementById("span3").innerHTML="";
+    }
+    
+          
+      $(document).ready(function(){
+                    $("#upload").dblclick(function(){
+                      $("#submit").bind("click",conclusion);
+                          $("#ans").html("Your documents verified,click submit!").css({"color":"blue","font-family":"cursive"});
+          
+              });
+         });
+    
+     function conclusion()
+            {
+                alert("Sucessfully uploaded!");
+            }
+    
+      $(document).ready(function(){
+              $("input").hover(function(){
+                 $(this).css({"background-color":"rgb(120, 106, 201)"});
+        
+             });
+              $("input").mouseleave(function(){
+                 $(this).css({"background-color":"white"});
+        
+             });
+    });
+    
+    
+     $(document).ready(function(){     
+              
+              $("#data").click(function(){
+                 $("#a").html("Name:"+($("#a1").val()));
+                 $("#b").html("E-mail:"+($("#a2").val()));
+                 $("#c").html("Password:"+($("#a3").val()));
+        
+             });
+              
+    
+    });
+
+    $(document).ready(function(){
+              $("#upload,#submit,#data").hover(function(){
+                 $(this).css({"background-color":"rgb(190, 110, 163)"});
+        
+             });
+              $("#upload,#submit,#data").mouseleave(function(){
+                 $(this).css({"background-color":"rgb(255, 0, 149)"});
+        
+             });
+    });
+
+function validate(file)
+{
+   arr=["jpg","jpeg","img"];
+   file=file.substr(file.lastIndexOf(".")+1);
+  if(arr.lastIndexOf(file)==-1)
+  {
+        $("#error").html("file doesn't match").addClass("red-color").removeClass("blue-color");
+        $("#file").val("");
+      
+  }
+  else
+  {
+        $("#error").html("successfully uploaded!").addClass("blue-color").removeClass("red-color");
+  }
+
+}
+
+    
+</script>
+    
+
+
+</body>
+</html>

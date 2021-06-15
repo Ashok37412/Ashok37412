@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <style>
+        h1{
+             color:blue;
+             font-size:25px;
+             font-family:Verdana, Geneva, Tahoma, sans-serif;
+         }
+        #a21{
+             list-style-image:url("ak21.jpg");
+          }
+          #a22{
+             list-style-image:url("ak22.jpg");
+          }
+          #a23{
+             list-style-image:url("ak23.jpg");
+          }
+          #a24{
+             list-style-image:url("ak24.jpg");
+          }
+          body{
+              background-color: rgb(248, 211, 190);
+          }
+          input:focus{
+            background-color: blue;
+          }
+         
+
+    </style>
+</head>
+<body>
+    <center>
+        <h1>WEL-COME to NEXT page 2</h1>
+     <table> 
+        <tr>
+           <td><li id="a21"><a href="pro1.html" target="_blank" style="font-size:40px;">Home   </a></li></td>
+           <td><li  id="a22"><a href="pro2.html" target="_blank" style="font-size:40px;">Details  </a></li></td>
+           <td><li  id="a23"><a href="pro3.html" target="_blank" style="font-size:40px;">contact  </a></li></td>
+           <td><li  id="a24"><a href="pro4.html" target="_blank" style="font-size:40px;">About   </a></li></td>
+        </tr>
+     </table><br>
+    <h4>YOU GIVE SOME DATA</h4><br>
+    <table>
+        <tr>
+            <td style="color:blue">Name:</td>
+            <td><input type="text" id="a1" ></td>
+        </tr>
+        <tr>
+            <td style="color:blue">Department:</td>
+            <td><input type="text" id="a2" ></td>
+        </tr>
+        <tr>
+            <td style="color:blue">CGPA:</td>
+            <td><input type="text" id="a3" ></td>
+        </tr>
+        <tr>
+            <td style="color:blue">College</td>
+            <td><input type="text" id="a4"></td>
+        </tr>
+        <tr>
+            <td style="color:blue">Passed-Out</td>
+            <td><input type="text" id="a5"></td>
+        </tr>
+        <tr>
+            <td style="color:blue">Experience</td>
+            <td><input type="text" id="a6"></td>
+        </tr>
+    </table><br><br>
+    <input type="submit" id="button">
+
+    </center>
+    <br><br><br><br>
+    <table border="5px solid red" style="border-collapse:collapse;margin-left:auto;margin-right:auto;padding:5px;border-spacing:10px;" id="mytable">
+        <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>CGPA</th>
+            <th>College</th>
+            <th>Passed-Out</th>
+            <th>Experience</th>
+            <th>Button</th>
+        </tr>
+        <tr>
+            <td>Ashokkumar</td>
+            <td>ECE</td>
+            <td>7.7</td>
+            <td>karpagam</td>
+            <td>2021</td>
+            <td>Fresher</td>
+            <td><button class="del">delete.</button></td>
+        </tr>
+        <tr>
+            <td>Aswin</td>
+            <td>IT</td>
+            <td>8.4</td>
+            <td>Kongu</td>
+            <td>2020</td>
+            <td>Fresher</td>
+            <td><button class="del">delete.</button></td>
+           
+        </tr>
+        <tr>
+            <td>Arun</td>
+            <td>CSE</td>
+            <td>7.3</td>
+            <td>kumaraguru</td>
+            <td>2020</td>
+            <td>1-2 years</td>
+            <td><button class="del">delete.</button></td>
+        </tr>
+        <tr>
+            <td>Aravindh</td>
+            <td>CSE</td>
+            <td>7.1</td>
+            <td>karpagam</td>
+            <td>2019</td>
+            <td>Fresher</td>
+            <td><button class="del">delete.</button>
+        </tr>
+      
+
+
+<script>
+        $("#button").click(function(){
+            $("#mytable").append("<tr><td>"+$("#a1").val()+"</td><td>"+$("#a2").val()+"</td><td>"+$("#a3").val()+"</td><td>"+$("#a4").val()+"</td><td>"+$("#a5").val()+"</td><td>"+$("#a6").val()+"</td><td>"+"<button class='del'>delete</button>"+"</td></tr>");
+
+            $("#a1").val("");
+            $("#a2").val("");
+            $("#a3").val("");
+            $("#a4").val("");
+            $("#a5").val("");
+            $("#a6").val("");
+        
+    });
+
+
+    $(document).ready(function(){
+              $("input").hover(function(){
+                 $(this).css({"background-color":"powderblue"});
+        
+             });
+
+    });
+
+    $(document).ready(function(){
+              $("#button").hover(function(){
+                 $(this).css({"background-color":"rgb(270, 176, 16)"});
+        
+             });
+              $("#button").mouseleave(function(){
+                 $(this).css({"background-color":"rgb(180, 76, 16)"});
+        
+             });
+    });
+    
+    $(document).ready(function(){
+             $("#mytable").on("click",".del",function(){
+          $(this).closest("tr").remove();
+        });
+    });
+             
+    
+</script>
+
+
+</body>
+</html>
